@@ -95,7 +95,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-sonarjs": "^0.23.0",
     "eslint-plugin-standard": "^4.1.0",
-    "eslint-plugin-unicorn": "^50.0.1",
+    "eslint-plugin-unicorn": "^51.0.1",
     "http-server": "^14.1.1",
     "license-badger": "^0.21.1",
     "mocha": "^10.3.0",
