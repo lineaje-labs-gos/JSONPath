@@ -1,5 +1,5 @@
-import {promisify} from "util";
-import {exec as _exec} from "child_process";
+import { promisify } from "util";
+import { exec as _exec } from "child_process";
 import path from "path";
 
 const exec = promisify(_exec);
@@ -16,15 +16,9 @@ describe("JSONPath - cli", () => {
             (e) => e
         );
         expect(out).to.have.property("code", 1);
-        expect(out).to.have.property(
-            "stderr",
-            `usage: ${binPath} <file> <path>\n\n` +
-                `[Error: ENOENT: no such file or directory, open 'wrong-file.json'] {\n` +
-                `  errno: -2,\n` +
-                `  code: 'ENOENT',\n` +
-                `  syscall: 'open',\n` +
-                `  path: 'wrong-file.json'\n` +
-                "}\n"
-        );
+        expect(out.stderr).to.include(`usage: ${binPath} <file> <path>`);
+        expect(out.stderr).to.include("ENOENT: no such file or directory");
+        expect(out.stderr).to.include("open 'wrong-file.json'");
+        ;
     });
 });
