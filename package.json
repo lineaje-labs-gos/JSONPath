@@ -1,7 +1,7 @@
 {
   "author": "Stefan Goessner",
   "name": "jsonpath-plus",
-  "version": "9.0.0",
+  "version": "9.0.0-lineaje-01",
   "type": "module",
   "bin": {
     "jsonpath": "./bin/jsonpath-cli.js",
@@ -47,15 +47,21 @@
     {
       "name": "Richard Schneider",
       "email": "makaretu@gmail.com"
+    },
+    { "name": "Shruthi Nair",
+      "email": "41227409+shruthi1798@users.noreply.github.com"
+    },
+    { "name": "Abhisek Sanyal",
+      "email": "10907245+abhiseksanyal@users.noreply.github.com"
     }
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/s3u/JSONPath.git"
+    "url": "git://github.com/lineaje-labs-gos/JSONPath.git"
   },
-  "bugs": "https://github.com/s3u/JSONPath/issues/",
-  "homepage": "https://github.com/s3u/JSONPath",
+  "bugs": "https://github.com/lineaje-labs-gos/JSONPath/issues/",
+  "homepage": "https://github.com/lineaje-labs-gos/JSONPath",
   "engines": {
     "node": ">=14.0.0"
   },
