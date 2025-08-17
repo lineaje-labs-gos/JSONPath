@@ -67,18 +67,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-      
+
       - name: Install JFrog CLI
         run: curl -fL https://install-cli.jfrog.io | sh
-
-      - name: Update package version
-        run: |
-            npm version ${{ github.event.inputs.release_version}} --no-git-tag-version
-
-      - name: Read version and package
-        run: |
-           PACKAGE_FILENAME=$(npm pack --pack-destination ./)
-           echo "PACKAGE_FILENAME=$PACKAGE_FILENAME" >> $GITHUB_ENV
 
       - name: Read version and package
         run: |
