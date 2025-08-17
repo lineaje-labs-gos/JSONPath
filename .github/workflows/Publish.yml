@@ -35,7 +35,7 @@ jobs:
 
       - name: Read version and package
         run: |
-           PACKAGE_NAME=$(npm pkg get name)
+           PACKAGE_NAME=$(npm pkg get name | sed -e 's/"//g')
            echo "PACKAGE_NAME=$PACKAGE_NAME" >> $GITHUB_ENV
 
       - name: Clear npm cache
@@ -78,7 +78,7 @@ jobs:
         run: |
            PACKAGE_FILENAME=$(npm pack --pack-destination ./)
            echo "PACKAGE_FILENAME=$PACKAGE_FILENAME" >> $GITHUB_ENV
-           PACKAGE_NAME=$(npm pkg get name)
+           PACKAGE_NAME=$(npm pkg get name | sed -e 's/"//g')
            echo "PACKAGE_NAME=$PACKAGE_NAME" >> $GITHUB_ENV
 
       - name: Import GPG private key
