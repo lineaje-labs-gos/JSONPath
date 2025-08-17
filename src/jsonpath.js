@@ -651,6 +651,10 @@ JSONPath.prototype._eval = function (
         if (containsPath) {
             script = script.replace(/@path/gu, '_$_path');
         }
+        const forbiddenPattern = /\b(?:constructor|Function|process|require|global|this|eval\s*\(|vm\s*\.\s*runInNewContext|spawn|execSync|bind|apply)\b/u;
+        if (forbiddenPattern.test(script)) {
+            throw new Error('Unsafe expression rejected by JSONPath');
+        }
         if (
             this.currEval === 'safe' ||
             this.currEval === true ||

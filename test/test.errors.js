@@ -76,7 +76,7 @@ checkBuiltInVMAndNodeVM(function (vmType, setBuiltInState) {
                     wrap: false,
                     eval: 'safe'
                 });
-            }).to.throw(Error, 'jsonPath: Unexpected expression: this');
+            }).to.throw(Error, /Unsafe expression rejected/u);
         });
 
         it('Invalid assignment in safe mode script', () => {

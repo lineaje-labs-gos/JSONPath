@@ -1,5 +1,5 @@
-import { promisify } from "util";
-import { exec as _exec } from "child_process";
+import {promisify} from "util";
+import {exec as _exec} from "child_process";
 import path from "path";
 
 const exec = promisify(_exec);
@@ -19,6 +19,5 @@ describe("JSONPath - cli", () => {
         expect(out.stderr).to.include(`usage: ${binPath} <file> <path>`);
         expect(out.stderr).to.include("ENOENT: no such file or directory");
         expect(out.stderr).to.include("open 'wrong-file.json'");
-        ;
     });
 });
